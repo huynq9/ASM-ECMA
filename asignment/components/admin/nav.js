@@ -8,7 +8,9 @@ const menusAdmin = () => {
   }, []);
   return `
     ${menusAdmin
-      .map((item) => `<a href="${item.path}">${item.name}</a>`)
+      .map(
+        (item) => `<a class="text-red-400"href="${item.path}">${item.name}</a>`
+      )
       .join(" ")}`;
 };
 export default menusAdmin;
