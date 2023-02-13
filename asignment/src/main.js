@@ -1,5 +1,5 @@
-import { render, router } from "./lib";
-import dashBoard from "./pages/admin/dashboard";
+import { render, router } from "../lib";
+import dashBoard from "../pages/admin/dashboard";
 
 const app = document.querySelector("#app");
 //admin page
