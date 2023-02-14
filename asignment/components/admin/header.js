@@ -1,5 +1,5 @@
 import menusAdmin from "./nav";
-const headerAdmin = () => `<div>
+const headerAdmin = () => `<div class="h-screen">
     ${menusAdmin()};
 </div>`;
 

@@ -7,10 +7,11 @@ const menusAdmin = () => {
       .then((data) => setMenusAdmin(data));
   }, []);
   return `
+
+  <div class="flex flex-col align-item">
     ${menusAdmin
-      .map(
-        (item) => `<a class="text-red-400"href="${item.path}">${item.name}</a>`
-      )
-      .join(" ")}`;
+      .map((item) => `<a href="${item.path}">${item.name}</a>`)
+      .join("")}
+      </div>`;
 };
 export default menusAdmin;
