@@ -13,15 +13,36 @@
     "dateOfBirth": "07/08/2003"
   },
   "menus": [
-    { "name": "Home", "path": "/" },
-    { "name": "Projects", "path": "/projects" },
-    { "name": "About", "path": "/about" }
+    {
+      "name": "Home",
+      "path": "/#/"
+    },
+    {
+      "name": "Projects",
+      "path": "/#/projects"
+    },
+    {
+      "name": "About",
+      "path": "/#/about"
+    }
   ],
   "menusAdmin": [
-    { "name": "Dashboard", "path": "/admin/" },
-    { "name": "Profile", "path": "/admin/profile" },
-    { "name": "Categories", "path": "/admin/categories" },
-    { "name": "Settings", "path": "/admin/settings" }
+    {
+      "name": "Dashboard",
+      "path": "/#/admin/"
+    },
+    {
+      "name": "Profile",
+      "path": "/#/admin/profile"
+    },
+    {
+      "name": "Categories",
+      "path": "/#/admin/categories"
+    },
+    {
+      "name": "Settings",
+      "path": "/#/admin/settings"
+    }
   ],
   "projects": [
     {
@@ -47,6 +68,27 @@
       "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FImage&psig=AOvVaw3iSy31xIybNCP5GTV0GBwb&ust=1676427052964000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCPDNosn3k_0CFQAAAAAdAAAAABAE",
       "link": "",
       "categoryId": 3
+    },
+    {
+      "name": "du an test",
+      "image": "https://images2.content-hci.com/commimg/myhotcourses/blog/post/myhc_94121.jpg",
+      "author": "Nguyen Quang Huy",
+      "link": "no",
+      "id": 4
+    },
+    {
+      "name": "du an test2",
+      "image": "https://images2.content-hci.com/commimg/myhotcourses/blog/post/myhc_94121.jpg",
+      "author": "Nguyen Quang Huy",
+      "link": "no",
+      "id": 5
+    },
+    {
+      "name": "du an test2",
+      "image": "https://images2.content-hci.com/commimg/myhotcourses/blog/post/myhc_94121.jpg",
+      "author": "Nguyen Quang Huy",
+      "link": "no",
+      "id": 6
     }
   ],
   "categories": [
@@ -64,6 +106,11 @@
       "id": 3,
       "name": "JAVASCRIPT",
       "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FImage&psig=AOvVaw3iSy31xIybNCP5GTV0GBwb&ust=1676427052964000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCPDNosn3k_0CFQAAAAAdAAAAABAE"
+    },
+    {
+      "name": "ReactJs",
+      "image": "https://www.patterns.dev/img/reactjs/react-logo@3x.svg",
+      "id": 4
     }
   ]
 }

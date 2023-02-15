@@ -2,12 +2,13 @@ import { render, router } from "../lib";
 import about from "../pages/about";
 import dashBoard from "../pages/admin/dashboard";
 import profileAdmin from "../pages/admin/profile";
-import projectsAdmin from "../pages/admin/categories";
 import settingsAdmin from "../pages/admin/settings";
 import home from "../pages/home";
 import projects from "../pages/projects";
 import categoriesAdmin from "../pages/admin/categories";
 import detailCategoryAdmin from "../pages/admin/detail-category";
+import projectAdd from "../pages/admin/adminProjectAdd";
+import adminCategoryAdd from "../pages/admin/adminCategoryAdd";
 
 const app = document.querySelector("#app");
 
@@ -24,4 +25,7 @@ router.on("/admin/settings", () => render(settingsAdmin, app));
 router.on("/admin/category/:id", ({ data }) =>
   render(() => detailCategoryAdmin(data), app)
 );
+router.on("admin/project/add", () => render(projectAdd, app));
+router.on("admin/categories/add", () => render(adminCategoryAdd, app));
+
 router.resolve();

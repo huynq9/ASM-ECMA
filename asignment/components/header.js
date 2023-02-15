@@ -1,6 +1,6 @@
 import menus from "./nav";
 const header = () => `<div>
-    ${menus()};
+    ${menus()}  
 </div>`;
 
 export default header;
