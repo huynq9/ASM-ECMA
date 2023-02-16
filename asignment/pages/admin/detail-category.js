@@ -8,6 +8,7 @@ const detailCategoryAdmin = ({ id }) => {
       .then((response) => response.json())
       .then((data) => setDetailCategory(data));
   }, []);
+  console.log(detailCategory.projects);
   return /*html*/ `
   
     <div class="w-2/12 h-screen absolute bg-neutral-700 text-white">
@@ -44,7 +45,9 @@ const detailCategoryAdmin = ({ id }) => {
             <td>Nguyễn Quang Huy</td>
             <td></td>
             <td>${detailCategory.name}</td>
-            <td><a href="">Update</a><a href="">Delete</a></td>
+            <td><a href="">edit</a><button data-id=${
+              item.id
+            } class=" btn-remove bg-teal-600 p-2 border rounded-xl mx-3 text-white hover:bg-red-600">Delete</button></td>
           </tr>`
                   )
                   .join("")

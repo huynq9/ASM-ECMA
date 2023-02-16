@@ -23,7 +23,7 @@ const projectAdd = () => {
         image: projectImage.value,
         author: projectAuthor.value,
         link: projectLink.value,
-        categoryId: projectLanguage.value,
+        // categoryId: projectLanguage.value,
       };
 
       fetch("http://localhost:3000/projects", {

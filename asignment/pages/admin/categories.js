@@ -8,6 +8,20 @@ const categoriesAdmin = () => {
       .then((response) => response.json())
       .then((data) => setCategories(data));
   }, []);
+  useEffect(() => {
+    const btns = document.querySelectorAll(".btn-remove");
+    for (let btn of btns) {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.id;
+        fetch(`http://localhost:3000/categories/${id}`, {
+          method: "DELETE",
+        }).then(() => {
+          const newCategory = categories.filter((item) => item.id != id);
+          setCategories(newCategory);
+        });
+      });
+    }
+  });
   return /*html*/ `
   
     <div class="w-2/12 h-screen absolute rounded-sm bg-neutral-700 text-white">
@@ -37,7 +51,11 @@ const categoriesAdmin = () => {
             }" alt=""></td>
             <td>${item.name}</td>
             <td><a href="/#/admin/category/${item.id}">View projects</a></td>
-            <td><a href="">Update</a><a href="">Delete</a></td>
+            <td><a href="/#/admin/categories/edit/${
+              item.id
+            }">Edit</a><button type="" class="btn-remove" data-id="${
+                item.id
+              }">Remove</button></td></td>
           </tr>`
             )
             .join("")}

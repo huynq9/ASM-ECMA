@@ -10,7 +10,7 @@ const menusAdmin = () => {
 
   <div class="flex flex-col align-item">
     ${menusAdmin
-      .map((item) => `<a href="${item.path}">${item.name}</a>`)
+      .map((item) => `<a class="" href="${item.path}">${item.name}</a>`)
       .join("")}
       </div>`;
 };
