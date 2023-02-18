@@ -24,16 +24,16 @@ const adminCategoryAdd = () => {
     });
   });
   return `
-    <div class="w-2/12 h-screen absolute bg-neutral-700 text-white">
+    <div class="w-2/12 h-screen absolute bg-neutral-700 text-white shadow-2xl shadow-black">
         ${headerAdmin()}
     </div>
-    <div class="w-9/12 ml-[390px] h-screen relative border ">
+    <div class="w-9/12 ml-[390px] h-screen relative border  bg-neutral-700  text-white border-black border-3xl shadow-2xl shadow-black">
     <h1 class="mt-4 text-center text-[45px]">Add categories</h1>
         <form id="form-add" class="flex flex-col w-[600px] mx-auto  border mt-32 p-5" >
             <label for="">Name</label>
-            <input type="" id="category-name" value="" class="border mx-2 border-black rounded-lg">
+            <input type="" id="category-name" value="" class="border mx-2 border-black rounded-lg text-black" required>
             <label for="">Image</label>
-            <input type="" id="category-image" value="" class="border mx-2 border-black rounded-lg">
+            <input type="" id="category-image" value="" class="border mx-2 border-black rounded-lg text-black" required>
             
             <button type="" id="btn" class="mt-3 border w-20 rounded-md">Add</button>
         </form>

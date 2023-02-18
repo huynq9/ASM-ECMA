@@ -12,6 +12,8 @@ import adminCategoryAdd from "../pages/admin/adminCategoryAdd";
 import adminCategoryEdit from "../pages/admin/adminCategoryEdit";
 import adminProjectEdit from "../pages/admin/adminProjectEdit";
 
+import adminProfileEdit from "../pages/admin/adminProfileEdit";
+
 const app = document.querySelector("#app");
 
 router.on("/", () => render(home, app));
@@ -35,6 +37,9 @@ router.on("admin/categories/edit/:id", ({ data }) =>
 
 router.on("admin/project/edits/:id", ({ data }) =>
   render(() => adminProjectEdit(data), app)
+);
+router.on("admin/profile/edit/:id", ({ data }) =>
+  render(() => adminProfileEdit(data), app)
 );
 
 router.resolve();

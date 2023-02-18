@@ -24,7 +24,7 @@ const adminDashBoard = () => {
     }
   });
   return `
-    <table class=" table-auto border mx-auto  w-[97%] text-center">
+    <table class=" table-auto border mx-auto  w-[97%] text-center ">
         <thead class="border">
         <tr>
             <th>STT</th>

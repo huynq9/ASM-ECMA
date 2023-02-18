@@ -8,13 +8,31 @@ const detailCategoryAdmin = ({ id }) => {
       .then((response) => response.json())
       .then((data) => setDetailCategory(data));
   }, []);
+
+  useEffect(() => {
+    const btns = document.querySelectorAll(".btn-remove");
+    for (let btn of btns) {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const id = btn.dataset.id;
+        fetch(`http://localhost:3000/projects/${id}`, {
+          method: "DELETE",
+        }).then(() => {
+          const newProjects = detailCategory.projects.filter(
+            (item) => item.id != id
+          );
+          setDetailCategory(newProjects);
+        });
+      });
+    }
+  });
   console.log(detailCategory.projects);
   return /*html*/ `
   
-    <div class="w-2/12 h-screen absolute bg-neutral-700 text-white">
+    <div class="w-2/12 h-screen absolute bg-neutral-700 text-white shadow-2xl shadow-black">
         ${headerAdmin()}
     </div>
-    <div class="w-9/12 ml-[390px] h-screen relative border">
+    <div class="w-9/12 ml-[390px] h-screen relative border  bg-neutral-700  text-white border-black border-3xl shadow-2xl shadow-black">
       <h1>Projects</h1>
       <h2><a href="/#/admin/project/add">Add new Projects</a></h2>
     <div class="flex">
@@ -51,7 +69,7 @@ const detailCategoryAdmin = ({ id }) => {
           </tr>`
                   )
                   .join("")
-              : ""
+              : "<h1>Không có project nào</h1>"
           }
         </tbody>
         </table>

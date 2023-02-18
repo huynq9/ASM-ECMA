@@ -9,7 +9,8 @@ const menus = () => {
   return `
     ${menus
       .map(
-        (item) => `<a class="text-red-400"href="${item.path}">${item.name}</a>`
+        (item) =>
+          `<a class="ml-4 mr-4 hover:text-black"href="${item.path}">${item.name}</a>`
       )
       .join(" ")}`;
 };
