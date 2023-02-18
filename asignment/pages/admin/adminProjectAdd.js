@@ -23,7 +23,7 @@ const projectAdd = () => {
         image: projectImage.value,
         author: projectAuthor.value,
         link: projectLink.value,
-        categoryId: projectLanguage.value,
+        categoryId: parseInt(projectLanguage.value),
       };
       console.log(newProject);
 

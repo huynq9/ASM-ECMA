@@ -51,7 +51,7 @@
       "image": "https://images2.content-hci.com/commimg/myhotcourses/blog/post/myhc_94121.jpg",
       "author": "Nguyen Quang Huy",
       "link": "no",
-      "categoryId": "3",
+      "categoryId": 3,
       "id": 1
     },
     {
@@ -59,8 +59,16 @@
       "image": "á",
       "author": "sad",
       "link": "ád",
-      "categoryId": "2",
+      "categoryId": 2,
       "id": 2
+    },
+    {
+      "name": "Dự án tốt nghiệp 2",
+      "image": "https://images2.content-hci.com/commimg/myhotcourses/blog/post/myhc_94121.jpg",
+      "author": "Nguyen Quang Huy",
+      "link": "1231231",
+      "categoryId": 3,
+      "id": 3
     }
   ],
   "categories": [
