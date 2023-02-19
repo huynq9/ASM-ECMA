@@ -19,8 +19,8 @@
       "path": "/#/"
     },
     {
-      "name": "Projects",
-      "path": "/#/projects"
+      "name": "Categories",
+      "path": "/#/categories"
     },
     {
       "name": "About",
@@ -48,27 +48,43 @@
   "projects": [
     {
       "name": "Dự án tốt nghiệp",
-      "image": "https://images2.content-hci.com/commimg/myhotcourses/blog/post/myhc_94121.jpg",
-      "author": "Nguyen Quang Huy",
+      "image": "https://media.istockphoto.com/id/1264553615/vi/vec-to/v%C6%B0%C6%A1ng-mi%E1%BB%87n-v%C3%A0ng-th%E1%BB%B1c-t%E1%BA%BF-ph%E1%BB%A5-ki%E1%BB%87n-n%E1%BB%AF-ho%C3%A0ng-ho%E1%BA%B7c-ho%C3%A0ng-t%E1%BB%AD-thanh-l%E1%BB%8Bch-3d-ho%E1%BA%B7c-vua-c%C3%B4ng-ch%C3%BAa.jpg?s=1024x1024&w=is&k=20&c=vGCdIoqANF8tzOJQRS5DwrCjhF1xL2Us90J8SvERRYk=",
       "link": "no",
-      "categoryId": 3,
+      "author": "Nguyen Quang Huy",
+      "categoryId": 2,
       "id": 1
     },
     {
-      "name": "du an 1",
-      "image": "á",
-      "author": "sad",
-      "link": "ád",
-      "categoryId": 2,
+      "name": "Dự án 1",
+      "image": "https://media.istockphoto.com/id/1264553615/vi/vec-to/v%C6%B0%C6%A1ng-mi%E1%BB%87n-v%C3%A0ng-th%E1%BB%B1c-t%E1%BA%BF-ph%E1%BB%A5-ki%E1%BB%87n-n%E1%BB%AF-ho%C3%A0ng-ho%E1%BA%B7c-ho%C3%A0ng-t%E1%BB%AD-thanh-l%E1%BB%8Bch-3d-ho%E1%BA%B7c-vua-c%C3%B4ng-ch%C3%BAa.jpg?s=1024x1024&w=is&k=20&c=vGCdIoqANF8tzOJQRS5DwrCjhF1xL2Us90J8SvERRYk=",
+      "link": "no",
+      "author": "Nguyễn Quang Huy",
+      "categoryId": 1,
       "id": 2
     },
     {
-      "name": "Dự án tốt nghiệp 2",
-      "image": "https://images2.content-hci.com/commimg/myhotcourses/blog/post/myhc_94121.jpg",
-      "author": "Nguyen Quang Huy",
+      "name": "Dự án mẫu",
+      "image": "https://media.istockphoto.com/id/1264553615/vi/vec-to/v%C6%B0%C6%A1ng-mi%E1%BB%87n-v%C3%A0ng-th%E1%BB%B1c-t%E1%BA%BF-ph%E1%BB%A5-ki%E1%BB%87n-n%E1%BB%AF-ho%C3%A0ng-ho%E1%BA%B7c-ho%C3%A0ng-t%E1%BB%AD-thanh-l%E1%BB%8Bch-3d-ho%E1%BA%B7c-vua-c%C3%B4ng-ch%C3%BAa.jpg?s=1024x1024&w=is&k=20&c=vGCdIoqANF8tzOJQRS5DwrCjhF1xL2Us90J8SvERRYk=",
       "link": "1231231",
-      "categoryId": 3,
+      "author": "Nguyen Quang Huy",
+      "categoryId": 1,
       "id": 3
+    },
+    {
+      "name": "Dự án tốt nghiệp",
+      "image": "https://media.istockphoto.com/id/1264553615/vi/vec-to/v%C6%B0%C6%A1ng-mi%E1%BB%87n-v%C3%A0ng-th%E1%BB%B1c-t%E1%BA%BF-ph%E1%BB%A5-ki%E1%BB%87n-n%E1%BB%AF-ho%C3%A0ng-ho%E1%BA%B7c-ho%C3%A0ng-t%E1%BB%AD-thanh-l%E1%BB%8Bch-3d-ho%E1%BA%B7c-vua-c%C3%B4ng-ch%C3%BAa.jpg?s=1024x1024&w=is&k=20&c=vGCdIoqANF8tzOJQRS5DwrCjhF1xL2Us90J8SvERRYk=",
+      "author": "Nguyễn Quang Huy",
+      "link": "1231231",
+      "categoryId": 1,
+      "id": 4
+    },
+    {
+      "name": "Dự án test",
+      "image": "https://media.istockphoto.com/id/1264553615/vi/vec-to/v%C6%B0%C6%A1ng-mi%E1%BB%87n-v%C3%A0ng-th%E1%BB%B1c-t%E1%BA%BF-ph%E1%BB%A5-ki%E1%BB%87n-n%E1%BB%AF-ho%C3%A0ng-ho%E1%BA%B7c-ho%C3%A0ng-t%E1%BB%AD-thanh-l%E1%BB%8Bch-3d-ho%E1%BA%B7c-vua-c%C3%B4ng-ch%C3%BAa.jpg?s=1024x1024&w=is&k=20&c=vGCdIoqANF8tzOJQRS5DwrCjhF1xL2Us90J8SvERRYk=",
+      "author": "Nguyễn Quang Huy",
+      "link": "no",
+      "categoryId": 2,
+      "id": 5
     }
   ],
   "categories": [

@@ -9,29 +9,35 @@ const adminProjectEdit = ({ id }) => {
       .then((response) => response.json())
       .then((data) => setProjects(data));
   }, []);
-  //   useEffect(() => {
-  //     fetch(`http://localhost:3000/projects/${id}?_embed=categories`)
-  //       .then((responses) => responses.json())
-  //       .then((datas) => setCategories(datas));
-  //   }, []);
+  useEffect(() => {
+    fetch(`http://localhost:3000/categories`)
+      .then((responses) => responses.json())
+      .then((datas) => setCategories(datas));
+  }, []);
   useEffect(() => {
     const form = document.querySelector("#form-add");
     const projectName = document.querySelector("#project-name");
     const projectImage = document.querySelector("#project-image");
     const projectLink = document.querySelector("#project-link");
     const projectAuthor = document.querySelector("#project-author");
+    const projectLanguage = document.querySelector("#project-language");
     form.addEventListener("submit", () => {
       const newProject = {
         name: projectName.value,
         image: projectImage.value,
         link: projectLink.value,
         author: projectAuthor.value,
+        categoryId: parseInt(projectLanguage.value),
       };
       fetch(`http://localhost:3000/projects/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newProject),
-      }).then(() => router.navigate("admin"));
+      }).then(() =>
+        router.navigate(
+          `admin/category/${newProject.categoryId}?_embed=projects`
+        )
+      );
     });
   });
   return `
@@ -58,16 +64,11 @@ const adminProjectEdit = ({ id }) => {
               projects.link
             }" class="border mx-2 border-black text-black rounded-lg"name="" value="" required>
             <label for="">Language</label>
-            <select class="border mx-2 border-black text-black rounded-lg" id="#project-language">
+            <select class="border mx-2 border-black text-black rounded-lg" id="project-language" required="value!=0">
                 <option value="0">Select</option>
-                ${
-                  projects.categories
-                    ? projects.categories.map(
-                        (item) =>
-                          `<option value="${item.id}">${item.name}</option>`
-                      )
-                    : ""
-                }
+                ${categories.map(
+                  (item) => `<option value="${item.id}">${item.name}</option>`
+                )}
             </select>
             <button type="" id="btn" class="mt-3 border w-20 rounded-md">Update</button>
         </form>

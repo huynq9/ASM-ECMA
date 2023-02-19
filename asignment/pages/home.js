@@ -37,7 +37,7 @@ const home = () => {
   <h2 class="text-[26px] mt-4">Dete of birth: ${profile.dateOfBirth}</h2>
   <h3 class="text-[20px] mt-4">Description: ${profile.description}</h3>
   <h3 class="text-[18px] mt-4"> Technologies used: </h4>
-  <div class="flex">
+  <div class="flex flex-wrap">
     ${category
       .map(
         (item) => /*html*/ `<div class=" ml-3 mr-3 mt-6 ">
@@ -50,16 +50,17 @@ const home = () => {
       )
       .join("")}
       
-  <div>
   
-  </div class="">
-        <div class = "flex-1 mt-5">
+        
+      
+  </div>
+  <div class = "flex-1 mt-5">
                             <div class = "flex justify-between">
                                 <div class="mb-1 text-base   font-semibold">HTML</div>
                                 <div class="mb-1 text-base  font-semibold">80%</div>
                             </div>
                                 <div class="w-full bg-gray-200 rounded-full h-2 mb-4 dark:bg-gray-700">
-                                <div class="bg-yellow-400 h-2  rounded-full" style="width: 80%"></div>
+                                <div class="bg-orange-600  h-2  rounded-full" style="width: 80%"></div>
                             </div>
 
                         <div class = "flex justify-between">
@@ -67,7 +68,7 @@ const home = () => {
                             <div class="mb-1 text-base  font-semibold">50%</div>
                         </div>
                             <div class="w-full bg-gray-200 rounded-full h-2 mb-4 dark:bg-gray-700">
-                            <div class="bg-purple-600 h-2  rounded-full" style="width: 50%"></div>
+                            <div class="bg-blue-600 h-2  rounded-full" style="width: 50%"></div>
                         </div>
 
                         <div class = "flex justify-between">
@@ -75,13 +76,11 @@ const home = () => {
                             <div class="mb-1 text-base  font-semibold">60%</div>
                         </div>
                             <div class="w-full bg-gray-200 rounded-full h-2 mb-4 dark:bg-gray-700">
-                            <div class="bg-blue-600 h-2  rounded-full" style="width: 60%"></div>
+                            <div class="bg-yellow-400 h-2  rounded-full" style="width: 60%"></div>
                         </div>
 
                         
                     </div>
-      
-  </div>
   `;
 };
 export default home;

@@ -33,7 +33,11 @@ const projectAdd = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(newProject),
-      }).then(() => router.navigate(`/admin/categories/`));
+      }).then(() =>
+        router.navigate(
+          `admin/category/${newProject.categoryId}?_embed=projects`
+        )
+      );
     });
   });
 

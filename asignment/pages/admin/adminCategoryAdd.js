@@ -20,7 +20,7 @@ const adminCategoryAdd = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(newCategory),
-      }).then(() => router.navigate("/admin/"));
+      }).then(() => router.navigate("/admin/categories"));
     });
   });
   return `

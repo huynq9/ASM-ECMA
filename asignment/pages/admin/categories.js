@@ -30,8 +30,8 @@ const categoriesAdmin = () => {
     </div>
     <div class="w-9/12 ml-[390px] h-screen relative border  bg-neutral-700  text-white border-black border-3xl shadow-2xl shadow-black">
       <h1 class="text-center my-6 text-xl">Categories</h1>
-      <a href="/admin/categories/add" class="border rounded-md ">Add new category</a>
-      <table class=" table-auto border mx-auto  w-[97%] text-center">
+      <a href="/admin/categories/add" class="border rounded- ml-6 p-2 rounded-xl hover:bg-white hover:text-black hover:border-black">Add new category</a>
+      <table class=" table-auto border mx-auto  w-[97%] text-center mt-5">
         <thead class="border">
         <tr>
           <th class="w-1/12">STT</th>
@@ -51,10 +51,12 @@ const categoriesAdmin = () => {
               item.image
             }" alt=""></td>
             <td>${item.name}</td>
-            <td><a href="/#/admin/category/${item.id}">View projects</a></td>
+            <td><a href="/#/admin/category/${
+              item.id
+            } "class="bg-teal-600 p-2 border rounded-xl mx-3 text-white hover:bg-red-600">View projects</a></td>
             <td><a href="/#/admin/categories/edit/${
               item.id
-            }">Edit</a><button type="" class="btn-remove" data-id="${
+            }" class=" bg-teal-600 p-2 border rounded-xl mx-3 text-white hover:bg-red-600">Edit</a><button type="" class="btn-remove  bg-teal-600 p-2 border rounded-xl mx-3 text-white hover:bg-red-600" data-id="${
                 item.id
               }">Remove</button></td></td>
           </tr>`

@@ -17,7 +17,7 @@ import adminProfileEdit from "../pages/admin/adminProfileEdit";
 const app = document.querySelector("#app");
 
 router.on("/", () => render(home, app));
-router.on("/projects", () => render(projects, app));
+router.on("/categories", () => render(projects, app));
 router.on("/about", () => render(about, app));
 
 //admin page

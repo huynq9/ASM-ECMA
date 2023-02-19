@@ -33,10 +33,11 @@ const detailCategoryAdmin = ({ id }) => {
         ${headerAdmin()}
     </div>
     <div class="w-9/12 ml-[390px] h-screen relative border  bg-neutral-700  text-white border-black border-3xl shadow-2xl shadow-black">
-      <h1>Projects</h1>
-      <h2><a href="/#/admin/project/add">Add new Projects</a></h2>
+      <h1 class="mt-20 text-center text-2xl">${detailCategory.name}</h1>
+      <a href="/#/admin/project/add" class="border  ml-6 p-2 rounded-xl ">Add new Projects</a>
     <div class="flex">
-    <table class=" table-auto border mx-auto  w-[97%] text-center">
+      
+    <table class=" table-auto border mx-auto  w-[97%] text-center mt-10">
         <thead class="border">
         <tr>
             <th>STT</th>
@@ -63,9 +64,11 @@ const detailCategoryAdmin = ({ id }) => {
             <td>Nguyễn Quang Huy</td>
             <td></td>
             <td>${detailCategory.name}</td>
-            <td><a href="">edit</a><button data-id=${
+            <td><a class="bg-teal-600 p-2 border rounded-xl mx-3 text-white hover:bg-red-600" href="admin/project/edits/${
               item.id
-            } class=" btn-remove bg-teal-600 p-2 border rounded-xl mx-3 text-white hover:bg-red-600">Delete</button></td>
+            }">Edit</a><button data-id=${
+                      item.id
+                    } class=" btn-remove bg-teal-600 p-2 border rounded-xl mx-3 text-white hover:bg-red-600">Delete</button></td>
           </tr>`
                   )
                   .join("")
