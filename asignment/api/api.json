@@ -79,11 +79,13 @@
       "id": 4
     },
     {
-      "name": "Dự án test",
-      "image": "https://media.istockphoto.com/id/1264553615/vi/vec-to/v%C6%B0%C6%A1ng-mi%E1%BB%87n-v%C3%A0ng-th%E1%BB%B1c-t%E1%BA%BF-ph%E1%BB%A5-ki%E1%BB%87n-n%E1%BB%AF-ho%C3%A0ng-ho%E1%BA%B7c-ho%C3%A0ng-t%E1%BB%AD-thanh-l%E1%BB%8Bch-3d-ho%E1%BA%B7c-vua-c%C3%B4ng-ch%C3%BAa.jpg?s=1024x1024&w=is&k=20&c=vGCdIoqANF8tzOJQRS5DwrCjhF1xL2Us90J8SvERRYk=",
+      "name": "Dự án tốt nghiệp 1",
+      "image": [
+        "https://res.cloudinary.com/dwb9qumu6/image/upload/v1676862186/asm-ecma/zphkjx3jqpmcz4bvjwji.jpg"
+      ],
       "author": "Nguyễn Quang Huy",
       "link": "no",
-      "categoryId": 2,
+      "categoryId": 3,
       "id": 5
     }
   ],

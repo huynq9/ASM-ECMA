@@ -1,6 +1,6 @@
 import headerAdmin from "../../components/admin/header";
 import { router, useEffect, useState } from "../../lib";
-
+import axios from "axios";
 const adminProjectEdit = ({ id }) => {
   const [projects, setProjects] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -21,14 +21,39 @@ const adminProjectEdit = ({ id }) => {
     const projectLink = document.querySelector("#project-link");
     const projectAuthor = document.querySelector("#project-author");
     const projectLanguage = document.querySelector("#project-language");
-    form.addEventListener("submit", () => {
+    const uploadFiles = async (files) => {
+      if (files) {
+        const CLOUD_NAME = "dwb9qumu6";
+        const PRESET_NAME = "upload";
+        const FOLDER_NAME = "asm-ecma";
+        const urls = [];
+        const api = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
+
+        const formData = new FormData(); // key/value
+
+        formData.append("upload_preset", PRESET_NAME);
+        formData.append("folder", FOLDER_NAME);
+        for (const file of files) {
+          formData.append("file", file);
+          const response = await axios.post(api, formData, {
+            headers: { "Content-type": "multipart/form-data" },
+          });
+          urls.push(response.data.secure_url);
+        }
+        return urls;
+      }
+    };
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const listImg = await uploadFiles(projectImage.files);
       const newProject = {
         name: projectName.value,
-        image: projectImage.value,
+        image: listImg,
         link: projectLink.value,
         author: projectAuthor.value,
         categoryId: parseInt(projectLanguage.value),
       };
+
       fetch(`http://localhost:3000/projects/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -52,8 +77,8 @@ const adminProjectEdit = ({ id }) => {
               projects.name
             }" class="border mx-2 border-black text-black rounded-lg" required>
             <label for="">Image</label>
-            <input type="" id="project-image" value="${
-              projects.image
+            <input type="file" multiple id="project-image" value="${
+              projects.image[0]
             }" class="border mx-2 border-black text-black rounded-lg" required>
             <label for="">Author</label>
             <input type="" id="project-author" value="${

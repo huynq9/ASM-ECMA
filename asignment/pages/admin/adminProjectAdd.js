@@ -1,6 +1,6 @@
 import headerAdmin from "../../components/admin/header";
 import { router, useEffect, useState } from "../../lib";
-
+import axios from "axios";
 const projectAdd = () => {
   const [categories, setCategory] = useState([]);
   useEffect(() => {
@@ -16,16 +16,39 @@ const projectAdd = () => {
     const projectLink = document.querySelector("#project-link");
     const projectLanguage = document.querySelector("#project-language");
 
-    form.addEventListener("submit", (e) => {
+    const uploadFiles = async (files) => {
+      if (files) {
+        const CLOUD_NAME = "dwb9qumu6";
+        const PRESET_NAME = "upload";
+        const FOLDER_NAME = "asm-ecma";
+        const urls = [];
+        const api = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
+
+        const formData = new FormData(); // key/value
+
+        formData.append("upload_preset", PRESET_NAME);
+        formData.append("folder", FOLDER_NAME);
+        for (const file of files) {
+          formData.append("file", file);
+          const response = await axios.post(api, formData, {
+            headers: { "Content-type": "multipart/form-data" },
+          });
+          urls.push(response.data.secure_url);
+        }
+        console.log(urls);
+        return urls;
+      }
+    };
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
+      const listImg = await uploadFiles(projectImage.files);
       const newProject = {
         name: projectName.value,
-        image: projectImage.value,
+        image: listImg,
         author: projectAuthor.value,
         link: projectLink.value,
         categoryId: parseInt(projectLanguage.value),
       };
-      console.log(newProject);
 
       fetch("http://localhost:3000/projects", {
         method: "POST",
@@ -38,6 +61,7 @@ const projectAdd = () => {
           `admin/category/${newProject.categoryId}?_embed=projects`
         )
       );
+      console.log(newProject);
     });
   });
 
@@ -51,7 +75,7 @@ const projectAdd = () => {
             <label for="">Name</label>
             <input type="" id="project-name" value="" class="border mx-2 text-black border-black rounded-lg" required>
             <label for="">Image</label>
-            <input type="" id="project-image" value="" class="border mx-2 text-black border-black rounded-lg" required>
+            <input type="file" multiple id="project-image" value="" class="border mx-2 text-black border-black rounded-lg" required>
             <label for="">Author</label>
             <input type="" id="project-author" value="" class="border mx-2 text-black border-black rounded-lg" required>
             <label for="">Link</label>

@@ -48,7 +48,7 @@ const categoriesAdmin = () => {
           <tr class="border  py-2">
             <td>${index + 1}</td>
             <td class="" ><img class="w-[45px] h-[45px]"src="${
-              item.image
+              item.image[0]
             }" alt=""></td>
             <td>${item.name}</td>
             <td><a href="/#/admin/category/${

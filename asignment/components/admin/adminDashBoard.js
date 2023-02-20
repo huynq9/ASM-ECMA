@@ -42,8 +42,8 @@ const adminDashBoard = () => {
               (item, index) => `
           <tr class="border  py-2">
             <td>${index + 1}</td>
-            <td class="" ><img class="w-[45px] h-[45px]"src="${
-              item.image
+            <td class="" ><img class="w-[45px] h-[45px]"src="https://cloudinary.com/console/c-d0352b1545611be041b95e32558744/media_library/folders/c335a0b99f8928ca1c588becba1fbcb843/${
+              item.image[0]
             }" alt=""></td>
             <td>${item.name}</td>
             <td>Nguyễn Quang Huy</td>

@@ -1,6 +1,6 @@
 import headerAdmin from "../../components/admin/header";
 import { router, useEffect, useState } from "../../lib";
-
+import axios from "axios";
 const adminCategoryEdit = ({ id }) => {
   const [category, setCategory] = useState([]);
   useEffect(() => {
@@ -8,16 +8,39 @@ const adminCategoryEdit = ({ id }) => {
       .then((response) => response.json())
       .then((data) => setCategory(data));
   }, []);
+  const uploadFiles = async (files) => {
+    if (files) {
+      const CLOUD_NAME = "dwb9qumu6";
+      const PRESET_NAME = "upload";
+      const FOLDER_NAME = "asm-ecma";
+      const urls = [];
+      const api = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
+
+      const formData = new FormData(); // key/value
+
+      formData.append("upload_preset", PRESET_NAME);
+      formData.append("folder", FOLDER_NAME);
+      for (const file of files) {
+        formData.append("file", file);
+        const response = await axios.post(api, formData, {
+          headers: { "Content-type": "multipart/form-data" },
+        });
+        urls.push(response.data.secure_url);
+      }
+      return urls;
+    }
+  };
   useEffect(() => {
     const form = document.querySelector("#form-add");
     const categoryName = document.querySelector("#category-name");
     const categoryImage = document.querySelector("#category-image");
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const formEdit = {
         name: categoryName.value,
-        image: categoryImage.value,
+        image: listImg,
       };
+      const listImg = await dFiles(categoryImage.files);
       fetch(`http://localhost:3000/categories/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -37,7 +60,7 @@ const adminCategoryEdit = ({ id }) => {
               category.name
             }" class=" text-black border mx-2 border-black rounded-lg" required>
             <label for="">Image</label>
-            <input type="" id="category-image" value="${
+            <input type="file" multiple id="category-image" value="${
               category.image
             }" class="border mx-2 border-black rounded-lg text-black" required>
             
