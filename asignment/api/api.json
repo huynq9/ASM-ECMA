@@ -77,16 +77,6 @@
       "link": "1231231",
       "categoryId": 1,
       "id": 4
-    },
-    {
-      "name": "Dự án tốt nghiệp 1",
-      "image": [
-        "https://res.cloudinary.com/dwb9qumu6/image/upload/v1676862186/asm-ecma/zphkjx3jqpmcz4bvjwji.jpg"
-      ],
-      "author": "Nguyễn Quang Huy",
-      "link": "no",
-      "categoryId": 3,
-      "id": 5
     }
   ],
   "categories": [

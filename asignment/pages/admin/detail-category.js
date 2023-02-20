@@ -14,6 +14,7 @@ const detailCategoryAdmin = ({ id }) => {
     for (let btn of btns) {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
+        window.confirm("Are you sure you want to remove");
         const id = btn.dataset.id;
         fetch(`http://localhost:3000/projects/${id}`, {
           method: "DELETE",
